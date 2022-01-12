@@ -103,7 +103,7 @@ def build_csv():
     ################## Spacer ##################
     #Make Row
     rows = []
-    for i in range(num):
+    for i in range(1, num+1):
         row = []
         product = get_single_product(product_list)
         address = get_single_address(address_list)

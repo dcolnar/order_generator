@@ -15,7 +15,6 @@ domestic:
     province: ""
     zip: "78746"
     country: "USA"
-    country: "USA"
   2:
     type: "business"
     full_name: "Manuel Todd"

@@ -23,7 +23,7 @@ def check_locale():
     answer = input("Please enter locale(domestic, canada, international): ") or "domestic"
     # Dummy Check
     if answer == 'domestic' or answer == 'international' or answer == 'canada':
-        answer == answer
+        answer = answer
     else:
         answer = 'domestic'
 
@@ -33,7 +33,7 @@ def check_multi_order():
     answer = input("Use multi-line orders (y/n)?: ").lower() or "y"
     # Dummy Check
     if answer == 'y' or answer == 'n':
-        answer == answer
+        answer = answer
     else:
         answer = 'n'
 
@@ -66,18 +66,18 @@ def build_csv():
         'Custom Field 2', 'Custom Field 3', 'Date Paid',
         'Height(in)', 'Length(in)', 'Order #',
         'Order Date', 'Order Source', 'Order Total',
-        'Shipping Paid', 'Shipping Serivce', 'Tax',
-        'Weight(oz)', 'Width(in)', 'Address Ln 1',
-        'Address Ln 2', 'Address Ln 3', 'Buyer Email',
+        'Shipping Paid', 'Shipping Service', 'Tax',
+        'Weight(oz)', 'Width(in)', 'Address Line 1',
+        'Address Line 2', 'Address Line 3', 'Buyer Email',
         'Buyer First Name', 'Buyer Last Name', 'Buyer Phone',
         'Buyer Username', 'City', 'Country Code',
         'Postal Code', 'Recipient Company', 'Recipient First Name',
         'Recipient Full Name', 'Recipient Last Name',
         'Recipient Phone', 'State', 'Item Marketplace ID',
         'Item Name', 'Item Options', 'Item Quantity',
-        'Item SKU', 'Item Unit Price', 'Item Warehouse',
-        'Item Weight(oz)', 'Gift Flag', 'Gift Message',
-        'Interal Notes', 'Notes from the Buyer', 'Notes to the Buyer']
+        'Item SKU', 'Item Unit Price', 'Item Warehouse Location',
+        'Item Weight (oz)', 'Gift Flag', 'Gift Message',
+        'Internal Notes', 'Notes from the Buyer', 'Notes to the Buyer']
 
     ################## Spacer ##################
 
@@ -112,7 +112,7 @@ def build_csv():
         # Should either add shipping cost to product file or calculate it somehow
         shipping = 10
         # Added fixed tax rate to the original with shipping cost and rounding to two decimals
-        amount_paid = round((order_amount*.0825) + order_amount + shipping,2)
+        amount_paid = round((order_amount*.0825) + order_amount + shipping,2)            
         buyer_full_name = address["first_name"] +" " + address["last_name"]
         custom_field_1 = ''
         custom_field_2 = ''
@@ -123,7 +123,7 @@ def build_csv():
             custom_field_2 = get_notes()
         if(i%3 == 0 and i%6 == 0):
             custom_field_3 = get_notes()
-        date_paid = get_formatted_date()
+        date_paid = ''
         height_in = get_order_quantity(3)
         length_in = get_order_quantity(3)
         order_number = get_order_number(num, i, is_multi_order)

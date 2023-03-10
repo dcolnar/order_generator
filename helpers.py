@@ -40,6 +40,10 @@ def get_single_product(product_list):
 	product = product_list[random.randint(1,len(product_list))]
 	return product
 
+def get_product(product_list, num):
+	product = product_list[num]
+	return product
+
 def get_single_address(address_list):
 	address = address_list[random.randint(1,len(address_list))]
 	return address

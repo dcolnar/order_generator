@@ -7,10 +7,18 @@ This tool will generate a csv file with the number of orders given as input. Thr
 - Multi-Orders
 
 ## Running the script
-You will need to have python installed, navigate to the folder in powershell, cmd, or terminal and run the following command (assuming python is in your PATH):
+You will need to have python installed, navigate to the folder in powershell, cmd, or terminal and run the following commands (assuming python is in your PATH):
 
-```sh 
-python ./orders_csv.py 
+### First assuming you have never used the library before, you will need to make sure you have the necessary packages installed:
+
+```sh
+pip install -r requirements.txt
+```
+
+### Once that is done you can run the orders script:
+
+```sh
+python orders_csv.py 
 ```
 
 You will see in your shell 3 prompts appear in order, fill these out and hit enter:
@@ -55,6 +63,22 @@ This can be changed in the orders_csv.py file in the ``` multi_order``` function
             return set_range * temp_num
     else:
         return current_order_num
+
+## =======================
+
+# Python CSV Products Generator
+
+## Running the script
+You will need to have python installed, navigate to the folder in powershell, cmd, or terminal and run the following commands (assuming python is in your PATH):
+
+```sh
+python product_generator.py 
+```
+## File Output
+
+Currently there is a fixed number of products, since I wanted to keep the same data for the same products for both orders and products. Future implementations may use Faker with seeded data instead so we are not limited to the current 493 products.
+
+## =======================
 
 ## Run through files (to be continued)
 ## =======================
